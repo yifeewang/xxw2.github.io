@@ -499,20 +499,26 @@
     const dialogbox = appbox.querySelector('.ch-van-overlay');
     const closebox = appbox.querySelector('.ch-icon-cross');
     downloadBox.addEventListener('click', e => {
-        axios('./certificate.pdf', {//pdf的位置
-            responseType: 'blob', //重要代码
-        }).then(res => {
-            console.log(9999, res)
-            const url = window.URL.createObjectURL(new Blob([res.data]));
-            const link = document.createElement('a');
-            link.href = url;
-            let fileName = "陈洪谦的pdf.pdf" //保存到本地的文件名称
-            link.setAttribute('download', fileName);
-            document.body.appendChild(link);
-            link.click();
-            console.log(link);
-            link.remove();
-        })
+        let a = document.createElement('a');
+        a.href = './certificate.pdf';
+        a.download = '11'
+        document.body.appendChild(a);
+        a.click()
+        document.body.removeChild(a);
+        // axios('./certificate.pdf', {//pdf的位置
+        //     responseType: 'blob', //重要代码
+        // }).then(res => {
+        //     console.log(9999, res)
+        //     const url = window.URL.createObjectURL(new Blob([res.data]));
+        //     const link = document.createElement('a');
+        //     link.href = url;
+        //     let fileName = "陈洪谦的pdf.pdf" //保存到本地的文件名称
+        //     link.setAttribute('download', fileName);
+        //     document.body.appendChild(link);
+        //     link.click();
+        //     console.log(link);
+        //     link.remove();
+        // })
     })
     closebox.addEventListener('click', e => {
         toggleNav();
