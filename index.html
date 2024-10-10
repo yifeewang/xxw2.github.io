@@ -500,12 +500,12 @@
     const closebox = appbox.querySelector('.ch-icon-cross');
     downloadBox.addEventListener('click', e => {
         let a = document.createElement('a');
-        a.href = './certificate.pdf';
+        a.href = './certificate2.pdf';
         a.download = '陈洪谦的证书'
         document.body.appendChild(a);
         a.click()
         document.body.removeChild(a);
-        // axios('./certificate.pdf', {//pdf的位置
+        // axios('./certificate2.pdf', {//pdf的位置
         //     responseType: 'blob', //重要代码
         // }).then(res => {
         //     console.log(9999, res)
